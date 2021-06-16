@@ -4,6 +4,8 @@ import './assets/css/App.css';
 //Importar componentes
 import MiComponente from './components/MiComponente';
 import Peliculas from './components/Peliculas';
+import Header from './components/Header';
+import Slider from './components/Slider';
 
 
 function HolaMundo(nombre) {
@@ -20,6 +22,10 @@ function App() {
   
   return (
     <div className="App">
+      
+      <Header />
+      <Slider />
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
