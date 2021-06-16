@@ -1,6 +1,9 @@
 import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
 
+//Importar componentes
+import MiComponente from './components/MiComponente';
+
 function HolaMundo(nombre) {
   var presentacion = (
     <div>
@@ -20,7 +23,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        {HolaMundo(nombre)}
+        {HolaMundo(nombre)}        
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -29,7 +32,12 @@ function App() {
         >
           Learn React
         </a>
+
+        <section className="componentes">
+          <MiComponente></MiComponente>
+        </section>
       </header>
+      
     </div>
   );
 }
