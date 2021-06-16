@@ -3,6 +3,8 @@ import './assets/css/App.css';
 
 //Importar componentes
 import MiComponente from './components/MiComponente';
+import Peliculas from './components/Peliculas';
+
 
 function HolaMundo(nombre) {
   var presentacion = (
@@ -34,7 +36,8 @@ function App() {
         </a>
 
         <section className="componentes">
-          <MiComponente></MiComponente>
+          <MiComponente />
+          <Peliculas />
         </section>
       </header>
       
