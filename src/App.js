@@ -21,13 +21,17 @@ function HolaMundo(nombre) {
 
 function App() {
   var nombre = "Erika Munini";
-  
+  var btnString = "Ir al blog";
+   
   return (
     <div className="App">
       
       <Header />
 
-      <Slider />
+      <Slider 
+        title="Bienvenido al Curso de React con Víctor Robles de victorroblesweb.es"
+        btn={btnString}
+      />
         
       <div className="center">
         <section id="content">
