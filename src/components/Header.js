@@ -6,10 +6,10 @@ class Header extends Component {
     render(){
         return(
             <header id="header">
-                <div class="center">
+                <div className="center">
                     {/* LOGO */}
                     <div id="logo">
-                        <img src={logo} class="app-logo" alt="Logotipo" />
+                        <img src={logo} className="app-logo" alt="Logotipo" />
                         <span id="brand">
                             <strong>Curso</strong>React
                         </span>
@@ -37,7 +37,7 @@ class Header extends Component {
                     </nav>
 
                     {/* LIMPIAR FLOTADOS */}
-                    <div class="clearfix"></div>
+                    <div className="clearfix"></div>
                 </div>
             </header>
         );

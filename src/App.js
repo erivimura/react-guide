@@ -7,6 +7,7 @@ import Peliculas from './components/Peliculas';
 import Header from './components/Header';
 import Slider from './components/Slider';
 import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
 
 
 function HolaMundo(nombre) {
@@ -54,8 +55,12 @@ function App() {
 
         <Sidebar />
 
+        <div className="clearfix"></div>
+
       </div>
       
+      <Footer />
+
     </div>
   );
 }
