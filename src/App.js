@@ -6,6 +6,7 @@ import MiComponente from './components/MiComponente';
 import Peliculas from './components/Peliculas';
 import Header from './components/Header';
 import Slider from './components/Slider';
+import Sidebar from './components/Sidebar';
 
 
 function HolaMundo(nombre) {
@@ -24,28 +25,36 @@ function App() {
     <div className="App">
       
       <Header />
+
       <Slider />
+        
+      <div className="center">
+        <section id="content">
 
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        {HolaMundo(nombre)}        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          {HolaMundo(nombre)}        
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
 
-        <section className="componentes">
-          <MiComponente />
-          <Peliculas />
+          <section className="componentes">
+            <MiComponente />
+            <Peliculas />
+          </section>
+
         </section>
-      </header>
+
+        <Sidebar />
+
+      </div>
       
     </div>
   );
