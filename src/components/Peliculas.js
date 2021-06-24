@@ -11,23 +11,35 @@ class Peliculas extends Component {
         ],
         nombre: 'Erika Munini'
     }
+
+    cambiarTitulo = () => {
+        var { peliculas } = this.state;
+        peliculas[0].titulo = "Nombre cambiado";
+
+        this.setState({
+            peliculas: peliculas
+        })
+    }
     
     render() {
         return (
-            <div id="article-template" className="article-item">
+            <React.Fragment>
 
                 <h2 className="subheader">Peliculas</h2>
                 <p> Seleccion de peliculas de {this.state.nombre}</p>
+                <p><button onClick={this.cambiarTitulo}>Cambiar Titulo</button></p>
 
+                <div id="articles">
                 {
                     this.state.peliculas.map((pelicula, i) => {
                         return(
                             <Pelicula key={i} pelicula={pelicula} />
                         );
                     })
-                }                
+                }  
+                </div>              
 
-            </div>            
+            </React.Fragment>           
         );
     }
 
