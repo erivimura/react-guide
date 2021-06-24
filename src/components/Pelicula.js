@@ -2,17 +2,12 @@ import React, {Component} from 'react';
 
 class Pelicula extends Component {
 
-    state = {
-        peliculas: [
-            { titulo: '',  imagen: ''},
-            { titulo: '',  imagen: ''},
-            { titulo: '',  imagen: ''}
-        ],
-        nombre: 'Erika Munini'
+    marcar = () => {
+        this.props.marcarFavorita(this.props.pelicula);
     }
     
     render() {
-
+        
         const { titulo, imagen } = this.props.pelicula;
 
         return (
@@ -22,12 +17,15 @@ class Pelicula extends Component {
                 </div>
 
                 <h2>{titulo}</h2>
-                <span class="date">
+                <span className="date">
                     Hace 5 minutos
                 </span>
                 <a href="#">Leer más</a>
+                <button onClick={this.marcar}>
+                    Marcar Favorito
+                </button>
 
-                <div class="clearfix"></div>
+                <div className="clearfix"></div>
             </article>         
         );
     }
