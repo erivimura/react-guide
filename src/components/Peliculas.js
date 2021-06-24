@@ -3,14 +3,18 @@ import Pelicula from './Pelicula';
 
 class Peliculas extends Component {
 
-    state = {
-        peliculas: [
-            { titulo: 'Peli 1',  imagen: 'https://via.placeholder.com/150'},
-            { titulo: 'Peli 2',  imagen: 'https://via.placeholder.com/150'},
-            { titulo: 'Peli 3',  imagen: 'https://via.placeholder.com/150'}
-        ],
-        nombre: 'Erika Munini',
-        favorita: {}
+    state = {}
+
+    componentWillMount(){
+        this.setState({
+            peliculas: [
+                { titulo: 'Peli 1',  imagen: 'https://via.placeholder.com/150'},
+                { titulo: 'Peli 2',  imagen: 'https://via.placeholder.com/150'},
+                { titulo: 'Peli 3',  imagen: 'https://via.placeholder.com/150'}
+            ],
+            nombre: 'Erika Munini',
+            favorita: {}
+        });
     }
 
     cambiarTitulo = () => {
@@ -37,11 +41,14 @@ class Peliculas extends Component {
                 <p>
                     <button onClick={this.cambiarTitulo}>Cambiar Titulo</button>
                 </p>
-                {this.state.favorita.titulo &&
-                    <p className="favorita">
-                        <strong>La pelicula favorita es: </strong>
-                        <span>{this.state.favorita.titulo}</span>
-                    </p>
+                {this.state.favorita.titulo ? (
+                        <p className="favorita">
+                            <strong>La pelicula favorita es: </strong>
+                            <span>{this.state.favorita.titulo}</span>
+                        </p>
+                    ) : (
+                        <p>No hay pelicula favorita</p>
+                    )
                 }
                 
 
