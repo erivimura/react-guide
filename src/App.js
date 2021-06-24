@@ -51,7 +51,6 @@ function App() {
           </a>
 
           <section className="componentes">
-            <MiComponente />
             <Peliculas />
           </section>
 

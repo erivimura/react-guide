@@ -1,34 +1,32 @@
 import React, {Component} from 'react';
-import MensajeEstatico from './MensajeEstatico';
+import Pelicula from './Pelicula';
 
 class Peliculas extends Component {
 
     state = {
-        contador: 0
+        peliculas: [
+            { titulo: 'Peli 1',  imagen: 'https://via.placeholder.com/150'},
+            { titulo: 'Peli 2',  imagen: 'https://via.placeholder.com/150'},
+            { titulo: 'Peli 3',  imagen: 'https://via.placeholder.com/150'}
+        ],
+        nombre: 'Erika Munini'
     }
-
-    suma = (e) => {
-        this.setState({
-            contador: (this.state.contador + 1)
-        });        
-    }
-
-    resta = (e) => {
-        this.setState({
-            contador: (this.state.contador - 1)
-        }); 
-    }
-
+    
     render() {
         return (
-            <div id="peliculas">
-                <h4>Soy peli</h4>
-                <MensajeEstatico />
-                <p>Contador: {this.state.contador}</p>
-                <p>
-                    <button onClick={this.suma}>Suma</button>
-                    <button onClick={this.resta}>Resta</button>
-                </p>
+            <div id="article-template" className="article-item">
+
+                <h2 className="subheader">Peliculas</h2>
+                <p> Seleccion de peliculas de {this.state.nombre}</p>
+
+                {
+                    this.state.peliculas.map((pelicula, i) => {
+                        return(
+                            <Pelicula key={i} pelicula={pelicula} />
+                        );
+                    })
+                }                
+
             </div>            
         );
     }
