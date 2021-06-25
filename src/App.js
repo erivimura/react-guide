@@ -1,4 +1,5 @@
 import './assets/css/App.css';
+import Router from './Router';
 
 //Importar componentes
 import Peliculas from './components/Peliculas';
@@ -24,7 +25,7 @@ function App() {
         <section id="content">
      
           <section className="componentes">
-            <Peliculas />
+            <Router />
           </section>
 
         </section>
