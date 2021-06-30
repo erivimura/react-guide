@@ -85,9 +85,12 @@ body {
   transition: 300ms all;
 }
 
-
 #menu a:hover{
   color: #3cb2d3;
+}
+
+.activo {
+  border-bottom: 2px solid #3cb2d3;
 }
 
 #slider{

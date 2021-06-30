@@ -34,7 +34,8 @@ class Router extends Component {
                             {/**Configurar rutas y paginas */}
 
                             <Switch>
-                                <Route exact path="/" component={Peliculas} />  
+                                <Route exact path="/" component={Peliculas} />
+                                <Route exact path="/home" component={Peliculas} />  
                                 <Route exact path="/ruta-prueba" component={MiComponente} />
 
                                 <Route component={Error} />
