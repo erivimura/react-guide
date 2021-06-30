@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Pelicula from './Pelicula';
+import Slider from './Slider';
+import Sidebar from './Sidebar';        
 
 class Peliculas extends Component {
 
@@ -36,34 +38,52 @@ class Peliculas extends Component {
         return (
             <React.Fragment>
 
-                <h2 className="subheader">Peliculas</h2>
-                <p> Seleccion de peliculas de {this.state.nombre}</p>
-                <p>
-                    <button onClick={this.cambiarTitulo}>Cambiar Titulo</button>
-                </p>
-                {this.state.favorita.titulo ? (
-                        <p className="favorita">
-                            <strong>La pelicula favorita es: </strong>
-                            <span>{this.state.favorita.titulo}</span>
-                        </p>
-                    ) : (
-                        <p>No hay pelicula favorita</p>
-                    )
-                }
-                
+                <Slider 
+                    title="Peliculas"
+                    size="slider-small"
+                /> 
 
-                <div id="articles">
-                {
-                    this.state.peliculas.map((pelicula, i) => {
-                        return(
-                            <Pelicula 
-                                key={i} 
-                                pelicula={pelicula} 
-                                marcarFavorita={this.favorita} 
-                            />
-                        );
-                    })
-                }  
+                <div className="center">        
+                    
+                    <div id="content">
+
+                        <h2 className="subheader">Listado de Peliculas</h2>
+                        <p> Seleccion de peliculas de {this.state.nombre}</p>
+                        <p>
+                            <button onClick={this.cambiarTitulo}>Cambiar Titulo</button>
+                        </p>
+                        {this.state.favorita.titulo ? (
+                                <p className="favorita">
+                                    <strong>La pelicula favorita es: </strong>
+                                    <span>{this.state.favorita.titulo}</span>
+                                </p>
+                            ) : (
+                                <p>No hay pelicula favorita</p>
+                            )
+                        }
+                        
+
+                        <div id="articles">
+                        {
+                            this.state.peliculas.map((pelicula, i) => {
+                                return(
+                                    <Pelicula 
+                                        key={i} 
+                                        pelicula={pelicula} 
+                                        marcarFavorita={this.favorita} 
+                                    />
+                                );
+                            })
+                        }  
+                        </div>
+
+                    </div>
+
+                    <Sidebar
+                        blog="true"
+                    />
+
+                    <div className="clearfix"></div>
                 </div>              
 
             </React.Fragment>           
