@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import Slider from './Slider';
 import Sidebar from './Sidebar';
+import Articles from './Articles';
 
 class Blog extends Component {
+
+    
  
-    render() {
+    render() {        
         
         return ( 
             <React.Fragment>
@@ -16,8 +19,10 @@ class Blog extends Component {
 
                 <div className="center">        
                     
-                    <div id="content">                        
-                        <h1 className="subheader">Soy blog</h1>                        
+                    <div id="content">  
+
+                        <Articles />
+                      
                     </div>
 
                     <Sidebar
