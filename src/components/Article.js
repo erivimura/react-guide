@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import Slider from './Slider';
 import Sidebar from './Sidebar';
-import Articles from './Articles';
 
-class Blog extends Component {
+class Article extends Component {
   
     render() {        
         
@@ -11,7 +10,7 @@ class Blog extends Component {
             <React.Fragment>
 
                 <Slider 
-                    title="Blog"
+                    title="Articulo"
                     size="slider-small"
                 /> 
 
@@ -19,12 +18,12 @@ class Blog extends Component {
                     
                     <div id="content">  
 
-                        <Articles />
+                        <h1>Holaaa</h1>
                       
                     </div>
 
                     <Sidebar
-                        blog="true"
+                        blog="false"
                     />
 
                     <div className="clearfix"></div>
@@ -35,4 +34,4 @@ class Blog extends Component {
 
 }
 
-export default Blog;
+export default Article;

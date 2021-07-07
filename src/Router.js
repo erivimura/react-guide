@@ -9,6 +9,7 @@ import Blog from './components/Blog';
 import Formulario from './components/Formulario';
 import Peliculas from './components/Peliculas';
 import Error from './components/Error';
+import Article from './components/Article';
 
 class Router extends Component {
 
@@ -25,7 +26,8 @@ class Router extends Component {
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/home" component={Home} /> 
-                        <Route exact path="/blog" component={Blog} />  
+                        <Route exact path="/blog" component={Blog} /> 
+                        <Route exact path="/blog/articulo/:id" component={Article} /> 
                         <Route exact path="/formulario" component={Formulario} />
                         <Route exact path="/peliculas" component={Peliculas} />
 
