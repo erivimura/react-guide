@@ -16,11 +16,30 @@ class Articles extends Component {
     }
 
     componentWillMount() {
-        this.getArticles();
+        var home = this.props.home;
+
+        if (home) 
+        {
+            this.getLastArticles();
+        } else {
+            this.getArticles();
+        }
     }
 
     getArticles = () => {
         axios.get(this.url + "articles")
+        .then(res => {
+
+            this.setState({
+                articles: res.data.articles,
+                status: 'success'
+            })
+
+        })
+    }
+
+    getLastArticles = () => {
+        axios.get(this.url + "articles/3")
         .then(res => {
 
             this.setState({
