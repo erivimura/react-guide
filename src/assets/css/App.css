@@ -201,10 +201,31 @@ body {
 
 .btn-success{
   background: rgb(23, 150, 19);
+  color: white;
+  text-decoration: none !important;
 }
 
 .btn-success:hover{
-  background:black;
+  opacity:0.8;
+}
+
+.btn-danger{
+  background: red;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.btn-danger:hover{
+  opacity: 0.8;
+}
+
+.btn-warning{
+  background: yellow;
+  text-decoration: none !important;
+}
+
+.btn-warning:hover{
+  opacity: 0.8;
 }
 
 .mid-form{

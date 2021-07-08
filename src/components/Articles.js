@@ -3,7 +3,7 @@ import axios from 'axios';
 import Global from '../Global';
 import Moment from 'react-moment';
 import 'moment/locale/es';
-import { Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 class Articles extends Component {
