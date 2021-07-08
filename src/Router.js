@@ -11,6 +11,8 @@ import Peliculas from './components/Peliculas';
 import Error from './components/Error';
 import Article from './components/Article';
 import Search from './components/Search';
+import CreateArticle from './components/CreateArticle';
+
 
 class Router extends Component {
 
@@ -30,6 +32,7 @@ class Router extends Component {
                         <Route exact path="/blog" component={Blog} /> 
                         <Route exact path="/blog/articulo/:id" component={Article} /> 
                         <Route exact path="/blog/busqueda/:search" component={Search} />
+                        <Route exact path="/blog/crear" component={CreateArticle} />
                         <Route exact path="/redirect/:search" render={
                             (props) => {
                                 var search = props.match.params.search;
@@ -37,7 +40,7 @@ class Router extends Component {
                             }
                         } />
                         <Route exact path="/formulario" component={Formulario} />
-                        <Route exact path="/peliculas" component={Peliculas} />
+                        <Route exact path="/peliculas" component={Peliculas} />                        
 
                         <Route component={Error} />
                     </Switch>
