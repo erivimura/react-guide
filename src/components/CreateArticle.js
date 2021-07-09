@@ -3,6 +3,8 @@ import Sidebar from './Sidebar';
 import axios from 'axios';
 import Global from '../Global';
 import { Redirect } from 'react-router-dom';
+import SimpleReactValidator from 'simple-react-validator';
+
 
 class CreateArticle extends Component {
 
@@ -15,6 +17,15 @@ class CreateArticle extends Component {
         article: {},
         status: null,
         selectedFile:  null
+    }
+
+    componentWillMount() {
+        this.validator = new SimpleReactValidator({
+            messages: {
+                required: 'Este campo es requerido',
+                alpha_num_space: 'Solo numeros, letras y espacios'
+            }
+        });
     }
 
     changeState = () => {
@@ -30,6 +41,17 @@ class CreateArticle extends Component {
         e.preventDefault();
 
         this.changeState();
+
+        if(!this.validator.allValid()) {
+
+            this.setState({
+                status: 'failed'
+            })
+
+            this.validator.showMessages();
+            this.forceUpdate();
+            return;
+        }
 
         axios.post(this.url + "save", this.state.article)
         .then(res => {
@@ -117,11 +139,15 @@ class CreateArticle extends Component {
                         <div className="form-group">
                             <label htmlFor="title">Titulo</label>
                             <input type="text" name="title" ref={this.titleRef} onChange={this.changeState} />
+
+                            {this.validator.message('title', this.state.article.title, 'required|alpha_num_space')}
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="content">Contenido</label>
                             <textarea name="content" ref={this.contentRef} onChange={this.changeState}></textarea>
+
+                            {this.validator.message('content', this.state.article.content, 'required|alpha_num_space')}
                         </div>
 
                         <div className="form-group">
